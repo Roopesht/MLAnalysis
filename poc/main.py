@@ -15,6 +15,5 @@ for feat in features.getFeatureSets(df, columns, results):
     #print ("Count: ", X_train.count(), Y_train.count())
     for key in algos:
         accuracy = algos[key].execute(X_train, Y_train, X_test, Y_test)
-        logger.logit (algos[key].getName(), accuracy)
-        logger.flush()
+        logger.logit (algos[key].getName(), accuracy, feat.columns)
         #Store the values against the featurs and algos for comparing it later

@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
 import logging
+logger = logging.getLogger('score')
+logger.setLevel(logging.INFO)
 logging.basicConfig(filename='results.log', filemode='w')
-def logit (algo, accuracy):
+print ("logging start")
+def logit (algo, accuracy, columns):
     text = "{algo}, {accu}".format(algo=algo, accu=accuracy)
     print (text)
-    logging.info("{algo}, {accu}".format(algo=algo, accu=accuracy))
+    logger.info("{algo}, {accu}, {columns}".format(algo=algo, accu=accuracy, columns=columns))
     return
 
 def flush():
