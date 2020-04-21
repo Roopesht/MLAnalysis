@@ -8,9 +8,7 @@ def getName():
     return "LinearRegression"
 
 def execute(X_train, Y_train, X_test, Y_test):
-    #accuracy = 1.0
     reg = LinearRegression()
-    #print (X_train, Y_train)
     reg.fit(X_train, Y_train)
     pred=reg.predict(X_test)
     accuracy = mean_squared_error(Y_test, pred, multioutput='raw_values')
